@@ -1,0 +1,32 @@
+{% extends "led/base.html" %}
+{% load static %}
+
+{% block script %}
+<script src="{% static 'led/led_axios.js' %}"></script>
+{% endblock %}
+
+
+
+{% block icerik %}
+<h1>LED kontrol</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="form-group">
+                <label class="col-form-label col-form-label-lg" for="ledpin">Led'in Baglı Oldugu Pini Giriniz:</label>
+                <input class="form-control form-control-lg" type="number" placeholder="Örn: 8" id="ledpin"><br>
+                <button class="btn btn-primary btn-lg" id="ledon">Led'i Ac</button>
+                <button class="btn btn-primary btn-lg" id="ledoff">Led'i Kapa</button>
+                {% csrf_token %}
+            </div>
+            <div id="sonuc"></div>
+        </div>
+        <div class="col-sm">
+            <p></p>
+        </div>
+        <div class="col-sm ampul-animasyon" id="test1">
+            <i class="fas fa-lightbulb"></i>
+        </div>
+    </div>
+</div>
+{% endblock %}
