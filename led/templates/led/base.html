@@ -9,8 +9,6 @@
         <link rel="stylesheet" href="{% static 'led/ufak_dokunuslar.css' %}"/>
         <script src="{% static 'led/axios.min.js' %}"></script>
         <script src="{% static 'led/js.cookie.min.js' %}"></script>
-        {% comment %} <script src="{% static 'led/bootstrap.min.js' %}"></script> {% endcomment %}
-        {% comment %} <script src="{% static 'led/jquery-3.4.1.js' %}"></script> {% endcomment %}
         {% block script %}
         {% endblock %}
     </head>
@@ -41,4 +39,6 @@
           {% block icerik %}
           {% endblock %}
     </body>
+      {% block Son_script %}
+      {% endblock %}
 </html>

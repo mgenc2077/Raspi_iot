@@ -17,3 +17,7 @@ Raspberry Pi üzerinde bulunan Gpio Portlarını internet/yerel ağ üzerinden k
 Anlık çalışan fonksiyonlar:
 * Led Kontrol
 
+TODO:
+* [ ] Serbest ekranında tekli kontrol
+* [x] Serbest ekranında Hepsini kapama yada Hepsini açma tuşu
+* [ ] Bütün Pinlerin DB ye eklenmesi

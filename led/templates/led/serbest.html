@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block script %}
-<script src="{% static 'led/serbest.js' %}"></script>
 {% endblock %}
 
 {% block icerik %}
@@ -10,8 +9,8 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-        <button type="button" class="btn btn-primary btn-lg" id='hep_ac'>Hepsini Kapat</button>
-        <button type="button" class="btn btn-primary btn-lg" id='hep_kapa'>Hepsini Aç</button>
+        <button type="button" class="btn btn-primary btn-lg" id='hep_ac_btn'>Hepsini Aç</button>
+        <button type="button" class="btn btn-primary btn-lg" id='hep_kapa_btn'>Hepsini Kapat</button>
         {% for pin in pins %}
             <div class="custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input ok" id="pin{{pin.pin_numarasi}}" value="{{pin.pin_numarasi}}">
@@ -29,4 +28,18 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block Son_script %}
+<script>
+const kontrol = () => {
+    var True = 1;
+    var False = 0;
+    {% for pin in pins %}
+    document.getElementById('pin'+'{{pin.pin_numarasi}}').checked = {{pin.pin_degeri}};
+    {% endfor %}
+    }
+kontrol();
+</script>  
+<script src="{% static 'led/serbest.js' %}"></script>
 {% endblock %}

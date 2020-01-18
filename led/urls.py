@@ -9,5 +9,8 @@ urlpatterns = [
     path("led_on", views.led_on,name='led_on'),
     path("led_off", views.led_off,name='led_off'),
     path("serbest", views.serbest,name='serbest'),
+    path("hafiza", views.hafiza,name='hafiza'),
+    path("temizle", views.temizle,name='temizle'),
+    path("full_on", views.full_on,name='full_on'),
 ]
 

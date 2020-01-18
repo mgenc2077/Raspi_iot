@@ -52,3 +52,19 @@ def temizle(request):
         'sonuc': 'Ledlerin hepsi kapali.'
     }
     return JsonResponse(data)
+
+def full_on(request):
+    for i in range(1,26):
+        #GPIO.output(i,GPIO.HIGH)
+        print('Ledpin {} acildi'.format(i))
+    data5 = {
+        'sonuc': 'Ledlerin hepsi acik.'
+    }
+    return JsonResponse(data5)
+
+def hafiza(request):
+    data1 =  {
+        "pins": Pin.objects.all().values
+    }
+    print(data1)
+    return JsonResponse(data1)
