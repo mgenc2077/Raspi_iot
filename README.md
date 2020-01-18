@@ -1,5 +1,6 @@
 # Raspi_Gpio (Genc_Iot)
 Raspberry Pi üzerinde bulunan Gpio Portlarını internet/yerel ağ üzerinden kontrol etmek için Django Web framework üzerinde bir web app tasarladım.
+![Anaekran](https://raw.githubusercontent.com/mgenc2077/Raspi_iot/master/anaekran.png)
 ## Tüm fonksiyonlar
 * Led Kontrol
   * Herhangi bir pin veya Led kontrolü
