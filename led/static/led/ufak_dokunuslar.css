@@ -1,0 +1,14 @@
+.kart {
+    padding: 10px;
+    padding-top: 40px;
+}
+
+.ampul-animasyon{
+    font-size: 8em;
+    transition: color 0.3s ease;
+    color: gray;
+}
+
+.ampul-animasyon.sari-hal {
+    color: yellow;
+}

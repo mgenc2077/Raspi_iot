@@ -1,0 +1,32 @@
+{% extends "led/base.html" %}
+{% load static %}
+
+{% block script %}
+<script src="{% static 'led/serbest.js' %}"></script>
+{% endblock %}
+
+{% block icerik %}
+<h1>Serbest Kontrol</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+        <button type="button" class="btn btn-primary btn-lg" id='hep_ac'>Hepsini Kapat</button>
+        <button type="button" class="btn btn-primary btn-lg" id='hep_kapa'>Hepsini Aç</button>
+        {% for pin in pins %}
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input ok" id="pin{{pin.pin_numarasi}}" value="{{pin.pin_numarasi}}">
+                <label class="custom-control-label" for="pin{{pin.pin_numarasi}}">{{pin.pin_numarasi}} numaralı pin </label>
+                {% comment %} checked={{pin.pin_degeri}} {% endcomment %}
+            </div>
+        {% endfor %}
+        {% comment %} onclick="getValue();return false" {% endcomment %}
+        </div>
+        <div class="col-sm">
+            <p></p>
+        </div>
+        <div class="col-sm">
+            <img src="{% static 'led/pinout.png' %}" alt="pinout">
+        </div>
+    </div>
+</div>
+{% endblock %}
