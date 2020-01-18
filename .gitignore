@@ -1,6 +1,2 @@
-led/templates/index2.html
-led/__pycache__/
-led/static/led/led.js
-led/static/led/serbest.jpg
-led/templates/led/index2.html
-led_switch/__pycache__/
+__pycache__
+
