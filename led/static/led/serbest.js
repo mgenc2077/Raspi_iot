@@ -62,7 +62,7 @@ const tiktest = () => {
     }
 }
 var klcv = document.getElementsByClassName('ok');
-console.log(klcv[0])
+//console.log(klcv[0])
 for (let k=0;k<28;k++) {
    var ac_btn1 = document.getElementById(klcv[k].id);
    ac_btn1.addEventListener('click', tiktest);

@@ -22,6 +22,7 @@ Anlık çalışan fonksiyonlar:
   * password: 1234GencIot12345
 
 TODO:
-* [ ] Serbest ekranında tekli kontrol
+* [x] Serbest ekranında tekli kontrol
 * [x] Serbest ekranında Hepsini kapama yada Hepsini açma tuşu
 * [x] Bütün Pinlerin DB ye eklenmesi
+* [ ] LDR ve DHT sistemlerinin tamamlanması
