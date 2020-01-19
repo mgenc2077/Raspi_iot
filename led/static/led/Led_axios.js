@@ -8,14 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(pinData,csrftoken)
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
-        var data = {
-            'X-CSRFTOKEN': csrftoken,
-            'pin': pinData,
-        }
-        console.log({data})
+        //var data5 = {
+        //    'pin': pinData,
+        //}
+        //console.log(data5)
         axios.post('/led_on', {
-            'X-CSRFTOKEN': csrftoken,
-            'pin': pinData,
+            pin: pinData,
         })
         .then(response => {
             console.log({response});
@@ -35,8 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
         axios.post('/led_off', {
-            'X-CSRFTOKEN': csrftoken1,
-            'pin': pinData1,
+            pin: pinData1,
         })
         .then(response => {
             console.log({response});

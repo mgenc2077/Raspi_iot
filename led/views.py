@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 #import RPi.GPIO as GPIO
 import time
+import json
 from .models import Pin
 
 #GPIO.setmode(GPIO.BOARD)
@@ -21,18 +22,23 @@ def dht(request):
     return render(request,"led/DHT.html")
 
 def led_on(request):
-    ledpin = request.GET.get('pin')
+    ledpin = json.loads(request.body.decode())
+    #print(list(ledpin.values())[0])
+    ledpin1 = list(ledpin.values())[0]
     #GPIO.output(ledpin,GPIO.HIGH)
-    print('Ledpin {} acildi'.format(ledpin))
+    Pin.objects.filter(pin_numarasi=ledpin1).update(pin_degeri=True)
+    print('Ledpin {} acildi'.format(ledpin1))
     data = {
         'sonuc': 'Led Acildi.'
     }
     return JsonResponse(data)
 
 def led_off(request):
-    ledpin1 = request.GET.get('pin')
+    ledpin3 = json.loads(request.body.decode())
+    ledpin6 = list(ledpin3.values())[0]
     #GPIO.output(ledpin1,GPIO.LOW)
-    print('Ledpin {} kapandi'.format(ledpin1))
+    Pin.objects.filter(pin_numarasi=ledpin6).update(pin_degeri=False)
+    print('Ledpin {} kapandi'.format(ledpin6))
     data = {
         'sonuc': 'Led Kapandi.'
     }
@@ -48,6 +54,7 @@ def temizle(request):
     for i in range(1,26):
         #GPIO.output(i,GPIO.LOW)
         print('Ledpin {} kapandi'.format(i))
+    Pin.objects.all().update(pin_degeri=False)
     data = {
         'sonuc': 'Ledlerin hepsi kapali.'
     }
@@ -57,6 +64,7 @@ def full_on(request):
     for i in range(1,26):
         #GPIO.output(i,GPIO.HIGH)
         print('Ledpin {} acildi'.format(i))
+    Pin.objects.all().update(pin_degeri=True)
     data5 = {
         'sonuc': 'Ledlerin hepsi acik.'
     }
