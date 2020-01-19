@@ -20,6 +20,7 @@ Anlık çalışan fonksiyonlar:
 * Admin ekranı giriş bilgileri:
   * username: GencIot
   * password: 1234GencIot12345
+
 TODO:
 * [ ] Serbest ekranında tekli kontrol
 * [x] Serbest ekranında Hepsini kapama yada Hepsini açma tuşu
