@@ -12,20 +12,24 @@
         <button type="button" class="btn btn-primary btn-lg" id='hep_ac_btn'>Hepsini Aç</button>
         <button type="button" class="btn btn-primary btn-lg" id='hep_kapa_btn'>Hepsini Kapat</button>
         {% for pin in pins %}
+            {% if ((pin.pin_numarasi)%2 == 1)  %}
             <div class="custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input ok" id="pin{{pin.pin_numarasi}}" value="{{pin.pin_numarasi}}">
                 <label class="custom-control-label" for="pin{{pin.pin_numarasi}}">{{pin.pin_numarasi}} numaralı pin </label>
-                {% comment %} checked={{pin.pin_degeri}} {% endcomment %}
             </div>
-        {% endfor %}
-        {% comment %} onclick="getValue();return false" {% endcomment %}
-        </div>
-        <div class="col-sm">
-            <p></p>
-        </div>
+        {% comment %} </div>
         <div class="col-sm">
             <img src="{% static 'led/pinout.png' %}" alt="pinout">
         </div>
+        <div class="col-sm"> {% endcomment %}
+            {% elif ((pin.pin_numarasi)%2 == 0) %}
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input ok" id="pin{{pin.pin_numarasi}}" value="{{pin.pin_numarasi}}">
+                <label class="custom-control-label" for="pin{{pin.pin_numarasi}}">{{pin.pin_numarasi}} numaralı pin </label>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div> 
     </div>
 </div>
 {% endblock %}

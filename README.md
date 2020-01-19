@@ -16,8 +16,11 @@ Raspberry Pi üzerinde bulunan Gpio Portlarını internet/yerel ağ üzerinden k
 Şu anki halinde Gpio ile erişim için gerekli RPi.GPIO kütüphanesi ve bazı fonksiyonlar için gerekli kod test amaçlı yorum satırı haline getirilmiştir.
 Anlık çalışan fonksiyonlar:
 * Led Kontrol
-
+* Serbest Ekranında Bütün tuşları Açıp kapama tuşları,pinlerin DB ye alınıp geri getirilmesi
+* Admin ekranı giriş bilgileri:
+  * username: GencIot
+  * password: 1234GencIot12345
 TODO:
 * [ ] Serbest ekranında tekli kontrol
 * [x] Serbest ekranında Hepsini kapama yada Hepsini açma tuşu
-* [ ] Bütün Pinlerin DB ye eklenmesi
+* [x] Bütün Pinlerin DB ye eklenmesi
