@@ -20,12 +20,22 @@
 {% endblock %}
 
 {% block Son_script %}
-while (true) {
-    for (let i=0;i<15;i++){
-        var asd = document.getElementById('deger1');
-        asd.innerHTML += '<p>{{deger}}</p><br>';
-    }
+<script> 
+function ldr() {
+    axios.get('/ldr_deger')
+    .then(response => {
+        for (let i=0;i<15;i++){
+            var asd = document.getElementById('deger1');
+            asd.innerHTML += `<p id=$(i)>$(ldrdegeri)</p>`;
+        }
+
+    })
+    
     console.log(asd.innerHTML);
-    asd.innerHTML = 0;
+    //asd.innerHTML = 0;
 }
+
+setInterval(ldr, 3000);
+
+</script>
 {% endblock %}
