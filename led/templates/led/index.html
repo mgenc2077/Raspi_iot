@@ -4,7 +4,7 @@
 {% block icerik %}
 <div class="container kart">
   <div class="row">
-    <div class="col-3">
+    <div class="col">
       <div class="card animated slideInUp" style="width: 18rem;">
           <img src="{% static 'led/led.jpg' %}" class="card-img-top" alt="led">
           <div class="card-body">
@@ -14,7 +14,7 @@
           </div>
       </div>
     </div>
-    <div class="col-3">
+    <div class="col">
       <div class="card animated slideInUp" style="width: 18rem;">
           <img src="{% static 'led/ldr.jpg' %}" class="card-img-top" alt="ldr">
           <div class="card-body">
@@ -24,23 +24,13 @@
           </div>
       </div>
     </div>
-    <div class="col-3">
-      <div class="card animated slideInUp" style="width: 18rem;">
-          <img src="{% static 'led/dht.jpg' %}" class="card-img-top" alt="dht">
-          <div class="card-body">
-            <h5 class="card-title">DHT</h5>
-            <p class="card-text">DHT-11 sensöru kullanarak ortamın sıcaklığını olçebilirsiniz.</p>
-            <a href="{% url 'dht' %}" class="btn btn-primary">Baslayın</a>
-          </div>
-      </div>
-    </div>
-    <div class="col-3">
+    <div class="col">
       <div class="card animated slideInUp" style="width: 18rem;">
           <img src="{% static 'led/serbest.webp' %}" class="card-img-top" alt="serbest">
           <div class="card-body">
             <h5 class="card-title">Serbest</h5>
             <p class="card-text">Her bir Pin'i tek tek kontrol ederek istediğiniz kontolu sağlayın</p>
-            <a href="{% url 'dht' %}" class="btn btn-primary">Baslayın</a>
+            <a href="{% url 'serbest' %}" class="btn btn-primary">Baslayın</a>
           </div>
       </div>
     </div>

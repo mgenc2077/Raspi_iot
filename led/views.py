@@ -16,13 +16,23 @@ def led(request):
     return render(request,"led/LED.html")
 
 def ldr(request):
-    return render(request,"led/LDR.html")
-
-def dht(request):
-    return render(request,"led/DHT.html")
+    #ldrpin = json.loads(request.body.decode())
+    #ldrv1 = 0
+    #GPIO.setmode(GPIO.BOARD)
+    #GPIO.setup(ldrpin,GPIO.OUT)
+    #GPIO.output(ldrpin,GPIO.LOW)
+    #time.sleep(.1)
+    #GPIO.setup(ldrpin,GPIO.IN)
+    #while(GPIO.input(ldrpin)==GPIO.LOW):
+    #   ilk += 1
+    context1 = {
+        'deger': '255'
+    }
+    return render(request,"led/LDR.html",context1)
 
 def led_on(request):
     ledpin = json.loads(request.body.decode())
+    #GPIO.setmode(GPIO.BOARD)
     #print(list(ledpin.values())[0])
     ledpin1 = list(ledpin.values())[0]
     #GPIO.output(ledpin,GPIO.HIGH)
@@ -36,6 +46,7 @@ def led_on(request):
 def led_off(request):
     ledpin3 = json.loads(request.body.decode())
     ledpin6 = list(ledpin3.values())[0]
+    #GPIO.setmode(GPIO.BOARD)
     #GPIO.output(ledpin1,GPIO.LOW)
     Pin.objects.filter(pin_numarasi=ledpin6).update(pin_degeri=False)
     print('Ledpin {} kapandi'.format(ledpin6))
@@ -51,6 +62,7 @@ def serbest(request):
     return render(request,"led/serbest.html",context)
 
 def temizle(request):
+    #GPIO.setmode(GPIO.BOARD)
     for i in range(1,26):
         #GPIO.output(i,GPIO.LOW)
         print('Ledpin {} kapandi'.format(i))
@@ -61,6 +73,7 @@ def temizle(request):
     return JsonResponse(data)
 
 def full_on(request):
+    #GPIO.setmode(GPIO.BOARD)
     for i in range(1,26):
         #GPIO.output(i,GPIO.HIGH)
         print('Ledpin {} acildi'.format(i))

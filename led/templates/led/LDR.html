@@ -2,4 +2,30 @@
 
 {% block icerik %}
 <h1>LDR</h1>
+<div class="container kart">
+    <div class="row">
+        <div class="col">
+            <fieldset>
+            <div id="deger1"></div>
+            </fieldset>
+        </div>
+        <div class="col">
+            <p></p>
+        </div>
+        <div class="col">
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block Son_script %}
+while (true) {
+    for (let i=0;i<15;i++){
+        var asd = document.getElementById('deger1');
+        asd.innerHTML += '<p>{{deger}}</p><br>';
+    }
+    console.log(asd.innerHTML);
+    asd.innerHTML = 0;
+}
 {% endblock %}
